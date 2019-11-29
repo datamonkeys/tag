@@ -59,17 +59,6 @@
 
   /*8. After you display the result, display the next random question, so that the game never ends (Hint: write a function for this and call it right after displaying the result)*/
 
-  function nextQuestion() {
-    var n = Math.floor(Math.random() * questions.length);
-    questions[n].displayQuestion();
-
-    var answer = prompt("Please select the correct answer.");
-    questions[n].checkAnswer(parseInt(answer));
-    nextQuestion();
-  }
-
-  nextQuestion();
-
   /* 9. Be careful: after Task 8, the game literally never ends. So include the option to quit the game if the user writes 'exit' instead of the answer. In this case, DON'T call the function from task 8.*/
 
   function nextQuestion() {
@@ -79,11 +68,12 @@
     var answer = prompt("Please select the correct answer.");
 
     if (answer !== "exit") {
-      questions[n].checkAnswer(parseInt(answer), keepScore);
+      questions[n].checkAnswer(parseInt(answer));
 
       nextQuestion();
     }
   }
+nextQuestion();
 
   /*10. Track the user's score to make the game more fun! So each time an answer is correct, add 1 point to the score (Hint: I'm going to use the power of closures for this, but you don't have to, just do this with the tools you feel more comfortable at this point).*/
 })();
