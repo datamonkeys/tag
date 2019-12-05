@@ -53,19 +53,7 @@ button {
 }
 
 #pagination {
-  margin: auto;
-  text-align: center;
   display: none;
-}
-
-#pagination a {
-  position: relative;
-  padding: .5rem .75rem;
-  margin-left: -1px;
-  line-height: 1.25;
-  color: #007bff;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
 }
 
 #pagination #selected {
