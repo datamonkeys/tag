@@ -144,7 +144,19 @@ generatePagination = data => {
     }
 }
 
+handleActives = (event) => {
+  // clean all the active classes
+  const elements = document.getElementsByClassName("active");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].className = "page-item";
+  }
+
+  // add active class to element
+  event.target.parentElement.className += " active";
+}
+
 changeIndex = (event, data) => {
+    handleActives(event);
     const contentValue = parseInt(event.target.innerText);
     const index = parseInt(event.target.attributes.index.value);
     const count = data.count;
